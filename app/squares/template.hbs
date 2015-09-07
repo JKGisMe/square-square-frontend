@@ -1,0 +1,7 @@
+{{link-to 'New square' 'squares.new'}}
+
+{{#each squares as |square|}}
+  <p>Size: {{square.dimension}}  Tiles: {{square.tiles}}</p>
+{{/each}}
+
+{{outlet}}
