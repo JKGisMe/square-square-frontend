@@ -1,0 +1,11 @@
+<p>
+  <label for="dimension">Dimension</label><br>
+  {{input value=square.dimension id="dimension"}}
+</p>
+
+<p>
+  <label for="tiles">Tiles</label><br>
+  {{textarea value=square.tiles id="tiles"}}
+</p>
+
+<button {{action 'save' square}} id="save">Save</button>

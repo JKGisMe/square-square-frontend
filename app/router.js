@@ -6,8 +6,13 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+
   this.route('squares', function() {
     this.route('new');
+  });
+
+  this.route('square', {path: '/square/:id'}, function(){
+    this.route('edit');
   });
 });
 

@@ -32,8 +32,14 @@ module.exports = function(environment) {
       'connect-src': "'self' http://localhost:4000",
       'img-src': "'self'",
       'style-src': "'self' 'unsafe-inline'",
-      'media-src': "'self'"
+      'media-src': "'self'",
+      'object-src': "'self'",
+      'frame-src': "'self'"
     };
+
+    
+
+    // ENV.APP.API_URL = process.env.API_URL;
   }
 
   if (environment === 'test') {

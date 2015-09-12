@@ -5,7 +5,8 @@ module.exports = function(defaults) {
     var app = new EmberApp(defaults, {
       sassOptions: {
         includePaths: [
-          'bower_components/materialize/sass'
+          'bower_components/materialize/sass',
+          'bower_components/materialize/sass/components'
         ]
       }
     });
@@ -22,6 +23,7 @@ module.exports = function(defaults) {
     // modules that you would like to import into your application
     // please specify an object with the list of modules as keys
     // along with the exports of each module as its value.
+    app.import(app.bowerDirectory + '/underscore/underscore.js')
     app.import("bower_components/materialize/sass/materialize.scss");
     app.import(app.bowerDirectory + '/materialize/dist/font/roboto/Roboto-Thin.woff2', {
         destDir: 'font/roboto'

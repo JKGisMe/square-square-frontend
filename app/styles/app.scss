@@ -1,1 +1,144 @@
-@import 'materialize'
+$color-primary-0: #AF0B0B;  // Main Primary color */
+$color-primary-1: #E34848;
+$color-primary-2: #D41C1C;
+$color-primary-3: #910000;
+$color-primary-4: #6B0000;
+
+$color-secondary-0: #AF550B;  // Main Secondary color (1) */
+$color-secondary-1: #E38E48;
+$color-secondary-2: #D46F1C;
+$color-secondary-3: #914200;
+$color-secondary-4: #6B3100;
+
+@import 'components/color';
+
+$primary-color: $color-primary-0;
+$primary-color-light: $color-primary-2;
+$primary-color-dark: $color-primary-4;
+$secondary-color: $color-secondary-0;
+$link-color: $color-primary-3;
+$card-link-color: $color-primary-3;
+
+
+@import 'materialize';
+
+.primary-bg{
+  background-color: $primary-color;
+}
+
+.primary-text{
+  color: $primary-color;
+}
+
+.primary-text-light{
+  color: $primary-color-light !important;
+}
+
+.secondary-bg{
+  background-color: $secondary-color;
+}
+
+
+@mixin centerer($horizontal: true, $vertical: true) {
+  position: absolute;
+  @if ($horizontal and $vertical) {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  } @else if ($horizontal) {
+    left: 50%;
+    transform: translate(-50%, 0);
+  } @else if ($vertical) {
+    top: 50%;
+    transform: translate(0, -50%);
+  }
+}
+
+header, .main-body, main, footer {
+    padding-left: 240px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+
+.flex-con-center-1{
+  display:flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.logo {
+  height: 112px;
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+#front-page-logo {
+  height: 80px;
+}
+
+.top-nav {
+    height: 112px;
+  box-shadow: none;
+}
+
+#logo-container {
+  height: 100%;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.page-title {
+    line-height: 122px;
+  font-size: 48px;
+}
+
+.add-square{
+  margin-top: 10px;
+}
+
+.square-display {
+  padding: 10px;
+  background-color: $primary-color;
+  height: 400px;
+  width: 400px;
+  border: 3px solid $primary-color;
+  border-radius: 8%;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+ 
+ .square-row {
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  align-items: stretch;
+  flex: 1;
+ }
+
+  .box {
+    flex: 1;
+    background-color: rgba(255, 255, 255, 0.5);
+    color: $primary-color-dark;
+    border-radius: 30%;
+    margin: 1%;
+    position: relative;
+    font-weight: 600;
+  }
+
+  .item{
+    @include centerer(true, true);
+    font-size: 1.5em;
+  }
+}
+
+
+
