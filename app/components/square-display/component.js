@@ -17,5 +17,5 @@ export default Ember.Component.extend({
       rowArray.push(tileArray.slice(i, i + dimension));
     }
     return rowArray;
-  }) 
+  })
 });

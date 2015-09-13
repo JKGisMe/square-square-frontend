@@ -18,6 +18,7 @@ $primary-color-dark: $color-primary-4;
 $secondary-color: $color-secondary-0;
 $link-color: $color-primary-3;
 $card-link-color: $color-primary-3;
+$button-color: $primary-color;
 
 
 @import 'materialize';
@@ -38,6 +39,9 @@ $card-link-color: $color-primary-3;
   background-color: $secondary-color;
 }
 
+.full-height {
+  height: 100%;
+}
 
 @mixin centerer($horizontal: true, $vertical: true) {
   position: absolute;
@@ -55,7 +59,7 @@ $card-link-color: $color-primary-3;
 }
 
 header, .main-body, main, footer {
-    padding-left: 240px;
+    margin-left: 240px;
 }
 
 @media only screen and (max-width : 992px) {
@@ -64,29 +68,71 @@ header, .main-body, main, footer {
   }
 }
 
+.side-nav {
+  overflow-y: visible;
+  
+  .logo {
+    &:hover {
+      background-color: $color-primary-3;
+    }
+  }
+
+  .sidenav-link {
+
+    &:hover {
+      background-color: $primary-color;
+      color: white;
+    }
+
+  a {
+    @extend .flow-text;
+    padding-left: 3rem;
+    font-weight: 400;
+    color: $primary-color;
+    font-size: 1.6rem;
+        &:hover {
+      color: white;
+    }
+  }
+}
+}
+
+.waves-bright-red .waves-ripple {
+  background-color: $primary-color;
+}
+
 .flex-con-center-1{
   display:flex;
-  flex-direction: column;
+  flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
   align-content: center;
   align-items: center;
 }
 
+
+
 .logo {
   height: 112px;
   border-bottom: 1px solid #ddd;
 }
-
-
 
 #front-page-logo {
   height: 80px;
 }
 
 .top-nav {
-    height: 112px;
+  height: 112px;
   box-shadow: none;
+}
+
+#nav-mobile.side-nav li.bold {
+  width: 100%;
+  padding: 0;
+
+  a {
+    width: 100%;
+  }
 }
 
 #logo-container {
@@ -96,13 +142,54 @@ header, .main-body, main, footer {
 }
 
 .page-title {
-    line-height: 122px;
+  line-height: 122px;
   font-size: 48px;
 }
 
 .add-square{
-  margin-top: 10px;
+  left: 212px;
+  z-index: 100;
+  position: fixed;
+  overflow: visible;
 }
+
+div.main-body {
+  display:flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: center;
+    .row {
+      margin: 4rem auto;
+      width: 85%;
+      flex: 0;
+    }
+}
+
+.square-card-wrapper {
+  width: 100%;
+  .card.flex {
+    margin: auto;
+  }
+}
+
+ .tile-circle {
+
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  color: white;
+  border-radius: 50%;
+  background-color: $color-primary-0;
+  line-height: 36px;
+
+
+  /* The element to be centered, can also be of any width and height */ 
+  .center-1 {
+
+  }
+ }
 
 .square-display {
   padding: 10px;

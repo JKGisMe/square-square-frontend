@@ -15,15 +15,23 @@
 
   <ul id="nav-mobile" class="side-nav fixed">
     <li class="logo primary-bg">
-    
       <a id="logo-container"  href="#!" class="brand-logo center">
         <object id="front-page-logo" type="image/svg+xml" data="white-red.svg">Your browser does not support SVG</object>
       </a>
     </li>
 
-    <li class="bold">
-      {{#link-to 'squares' class="waves-effect waves-red"}}Squares{{/link-to}}</li>
-    <li class="bold"><a href="getting-started.html" class="waves-effect waves-teal">Getting Started</a></li>
+    <li class="bold sidenav-link first-li">
+      {{#link-to 'squares' class="waves-effect waves-bright-red"}}Squares{{/link-to}}
+    </li>
+  {{#link-to 'squares.new' class="left btn-floating btn-large waves-effect waves-light add-square primary-bg"}}
+  <div>
+    <i class="mdi-content-add"></i>
+  </div>
+  {{/link-to}}
+
+    <li class="bold sidenav-link">
+      {{#link-to 'squares.new' class="waves-effect waves-bright-red"}}Add a square{{/link-to}}
+    </li>
   </ul>
 
 </header>

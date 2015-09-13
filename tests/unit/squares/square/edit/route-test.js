@@ -6,6 +6,6 @@ moduleFor('route:squares/square/edit', 'Unit | Route | squares/square/edit', {
 });
 
 test('it exists', function(assert) {
-  var route = this.subject();
+  const route = this.subject();
   assert.ok(route);
 });

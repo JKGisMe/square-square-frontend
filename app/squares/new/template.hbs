@@ -1,13 +1,17 @@
-<h2>New Square</h2>
+<div class="row">
+  <div class="card">
+    <h2>New Square</h2>
 
-<p>
-  <label for="dimension">Dimension</label><br>
-  {{input value=model.dimension id="dimension"}}
-</p>
+    <p>
+      <label for="dimension">Dimension</label><br>
+      {{input value=model.dimension id="dimension"}}
+    </p>
 
-<p>
-  <label for="tiles">Tiles</label><br>
-  {{textarea value=model.tiles id="tiles"}}
-</p>
+    <p>
+      <label for="tiles">Tiles</label><br>
+      {{textarea value=model.tiles id="tiles"}}
+    </p>
 
-<button {{action 'save'}} id="save">Save</button>
+    <button class="btn waves-effect waves-light" {{action 'save'}} id="save">Save</button>
+  </div>
+</div>

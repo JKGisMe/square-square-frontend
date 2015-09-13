@@ -1,7 +1,7 @@
-<a {{action 'newSquare'}} class="left btn-floating btn-large waves-effect waves-light add-square primary-bg"><i class="mdi-content-add"></i></a>
+{{liquid-outlet}}
 {{#each squares as |square|}}
-<div class="row">
-        <div class="col s9">
+  <div class="row">
+        <div class="square-card-wrapper">
           <div class="card flex">
             <div class="card-image flex-con-center-1">
                 {{#link-to 'square' square.id}}
@@ -9,7 +9,18 @@
                 {{/link-to}}
             </div>
             <div class="card-content">
-               <span class="card-title primary-text-light">Size: {{square.dimension}}  Tiles: {{square.tiles}}<i class="mdi-navigation-more-vert right small activator"></i></span>
+               <div class="card-title primary-text-light">   
+                Size: {{square.dimension}}  <br /> 
+                Tiles <br /> 
+                  {{#each square.tileArray as |tile|}}
+                    <div class="tile-circle center">
+                      <span class="center-1">
+                        {{tile}}
+                      </span>
+                    </div>
+                  {{/each}}
+                <i class="mdi-navigation-more-vert right small activator"></i>
+              </div>
             </div>
             <div class="card-action">
               <button class="btn waves-effect waves-light" {{action 'delete' square}}>Delete this square</button>
